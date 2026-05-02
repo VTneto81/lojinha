@@ -1,0 +1,28 @@
+{
+  "name": "PartnerProfile",
+  "type": "object",
+  "properties": {
+    "mom_instagram": {
+      "type": "string"
+    },
+    "mom_name": {
+      "type": "string"
+    },
+    "profile_image": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "mom_whatsapp": {
+      "type": "string"
+    },
+    "mom_email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "mom_instagram",
+    "mom_name"
+  ]
+}
