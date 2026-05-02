@@ -19,7 +19,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("todos");
   const [activePartner, setActivePartner] = useState("todos");
-  const { cart, addToCart, cartCount } = useCart();
+  const { addToCart } = useCart();
   const [submissions, setSubmissions] = useState([]);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <Header cartCount={cartCount} />
+      <Header />
       <section className="bg-gradient-to-br from-blue-600 via-teal-500 to-cyan-400 text-white py-16 px-4 text-center">
         <div className="text-6xl mb-4">🧸</div>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3 drop-shadow">Lojinha da Mamãe</h1>
@@ -79,6 +79,18 @@ export default function Home() {
               </button>
             ))}
           </div>
+          {partners.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => setActivePartner("todos")} className={`px-4 py-1.5 rounded-full font-semibold text-sm transition-all ${activePartner === "todos" ? "bg-teal-600 text-white shadow" : "bg-white text-teal-600 border border-teal-200 hover:bg-teal-50"}`}>
+                👥 Todas as parceiras
+              </button>
+              {partners.map(p => (
+                <button key={p.instagram} onClick={() => setActivePartner(p.instagram)} className={`px-4 py-1.5 rounded-full font-semibold text-sm transition-all flex items-center gap-1 ${activePartner === p.instagram ? "bg-teal-600 text-white shadow" : "bg-white text-teal-600 border border-teal-200 hover:bg-teal-50"}`}>
+                  ⭐ {p.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
         {loading ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
