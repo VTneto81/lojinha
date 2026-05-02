@@ -1,0 +1,65 @@
+{
+  "name": "Submission",
+  "type": "object",
+  "properties": {
+    "mom_name": {
+      "type": "string"
+    },
+    "mom_instagram": {
+      "type": "string"
+    },
+    "mom_whatsapp": {
+      "type": "string"
+    },
+    "mom_email": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_description": {
+      "type": "string"
+    },
+    "product_price": {
+      "type": "number"
+    },
+    "product_images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "social_link": {
+      "type": "string"
+    },
+    "caption_suggestion": {
+      "type": "string"
+    },
+    "admin_caption": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "aprovado",
+        "rejeitado",
+        "publicado"
+      ],
+      "default": "pendente"
+    },
+    "rejection_reason": {
+      "type": "string"
+    },
+    "add_to_store": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "mom_name",
+    "mom_instagram",
+    "product_name",
+    "product_images"
+  ]
+}
