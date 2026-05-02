@@ -1,0 +1,56 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do produto"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "roupas",
+        "brinquedos",
+        "acessórios",
+        "outros"
+      ]
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "size": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "number"
+    },
+    "min_stock": {
+      "type": "number",
+      "default": 5
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "social_caption": {
+      "type": "string"
+    },
+    "posted_to_social": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ]
+}
