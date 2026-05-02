@@ -1,0 +1,59 @@
+{
+  "name": "Repasse",
+  "type": "object",
+  "properties": {
+    "mom_instagram": {
+      "type": "string"
+    },
+    "mom_name": {
+      "type": "string"
+    },
+    "mom_whatsapp": {
+      "type": "string"
+    },
+    "submission_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_price": {
+      "type": "number"
+    },
+    "commission_percent": {
+      "type": "number",
+      "default": 20
+    },
+    "repasse_value": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "a_pagar",
+        "pago"
+      ],
+      "default": "pendente"
+    },
+    "order_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "paid_at": {
+      "type": "string"
+    },
+    "pix_key": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "mom_instagram",
+    "mom_name",
+    "product_name",
+    "product_price",
+    "repasse_value"
+  ]
+}
