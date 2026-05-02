@@ -1,0 +1,41 @@
+{
+  "name": "TransactionLog",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string"
+    },
+    "repasse_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "order_created",
+        "payment_confirmed",
+        "repasse_updated",
+        "notification_sent",
+        "error"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "pending",
+        "failed"
+      ]
+    },
+    "details": {
+      "type": "object"
+    },
+    "error_message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "order_id",
+    "event_type",
+    "status"
+  ]
+}
